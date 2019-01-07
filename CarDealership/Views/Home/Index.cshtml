@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<p>Cars:</p>
+
+
+@foreach (var car in ViewBag.Cars["cars"])
+{
+
+    <form action="~/Home/Edit/">
+        <label>MAKE: @car.Make</label>
+        <label>MODEL: @car.Model</label>
+        <Label>COLOR: @car.Color</Label>
+        <label>YEAR: @car.Year</label>
+        <label>ID: @car.CarID</label>
+        <input type="hidden" value=@car.CarID name="CarID"/>
+        <button type="submit">EDIT CAR?</button>
+    </form>
+    <br />
+    <br />
+
+}
